@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_tasks:
                 break;
 
-            case R.id.action_proje:
+            case R.id.action_projects:
                 break;
 
             case R.id.action_notes:

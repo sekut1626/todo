@@ -15,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Projects" />
+        <activity android:name=".Notes" />
+        <activity android:name=".Statistic"></activity>
     </application>
 
 </manifest>

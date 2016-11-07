@@ -31,11 +31,11 @@ public class Projects extends AppCompatActivity {
                 break;
 
             case R.id.action_notes:
-                startActivity(new Intent(Projects.this, Notes.class));
+
                 break;
 
             case R.id.action_statistic:
-                startActivity(new Intent(Projects.this, Statistic.class));
+                
                 break;
         }
         return true;

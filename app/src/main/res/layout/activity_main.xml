@@ -82,14 +82,16 @@
             android:layout_toRightOf="@+id/TextP"
             android:layout_toEndOf="@+id/TextP" />
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/stat_notify_more"
             android:id="@+id/imageButton"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/spinner"
             android:layout_toEndOf="@+id/spinner"
-            android:onClick="addData (MainActivity)" />
+            android:onClick="addData"
+             />
 
     </RelativeLayout>
 

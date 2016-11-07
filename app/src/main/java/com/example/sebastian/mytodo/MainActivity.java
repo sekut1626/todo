@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         initDB();
         updateListView();
         listapriorytetow();
-        usuwanieZadania();
     }
 
     @Override
@@ -125,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         mTaskListView = (ListView) findViewById(R.id.list_todo);
         taskNameEditText = (EditText) findViewById(R.id.taketask);
         spinner = (Spinner) findViewById(R.id.spinner);
+        b1 = (ImageButton) findViewById(R.id.deleteTaskBtn);
     }
 
     private void initDB() {
@@ -146,25 +146,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void usuwanieZadania() {
-        b1 = (ImageButton) findViewById(R.id.deleteTaskBtn);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
-    }
 
 
     public void deleteeTask(View view) {
+//        View parent = (View) view.getParent();
+//        TextView taskTextView = (TextView) parent.findViewById(R.id.task_title);
+//        String taskName = String.valueOf(taskTextView.getText());
+//        dbHelper.deleteTask(taskName);
+//        updateListView();
 
-        View parent = (View) view.getParent();
-        TextView taskTextView = (TextView) parent.findViewById(R.id.task_title);
-        String taskName = String.valueOf(taskTextView.getText());
-        dbHelper.deleteTask(taskName);
-        updateListView();
     }
+
+
 
     private void updateListView() {
 
@@ -186,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void test(View view) {
 
-
-
+    }
 }

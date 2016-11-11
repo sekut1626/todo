@@ -65,9 +65,9 @@
 
                 Spinner spinner = (Spinner) view.findViewById(R.id.spinner2);
                 ArrayList<ItemData> list = new ArrayList<>();
-                list.add(new ItemData(R.drawable.jeden));
-                list.add(new ItemData(R.drawable.dwa));
-                list.add(new ItemData(R.drawable.trzy));
+                list.add(new ItemData("normalny", R.drawable.jeden));
+                list.add(new ItemData("ważny", R.drawable.dwa));
+                list.add(new ItemData("pilny", R.drawable.trzy));
                 SpinnerAdapter adapter = new CustomAdapterSpinner((Activity) context, R.layout.spinner_layout, R.id.txt, list);
 
                 spinner.setAdapter(adapter);
@@ -78,13 +78,13 @@
                         switch (position) {
 
                             case 0:
-                                Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(parent.getContext(), "zadanie NORMALNE", Toast.LENGTH_SHORT).show();
                                 break;
                             case 1:
-                                Toast.makeText(parent.getContext(), "Spinner item 2!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(parent.getContext(), "zadanie WAŻNE", Toast.LENGTH_SHORT).show();
                                 break;
                             case 2:
-                                Toast.makeText(parent.getContext(), "Spinner item 3!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(parent.getContext(), "zadanie PILNE", Toast.LENGTH_SHORT).show();
                                 break;
                         }
                     }

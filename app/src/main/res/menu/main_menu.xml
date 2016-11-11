@@ -6,9 +6,6 @@
         android:id="@+id/action_tasks"
         android:title="zadania" />
     <item
-        android:id="@+id/action_projects"
-        android:title="projekty" />
-    <item
         android:id="@+id/action_notes"
         android:title="notatki" />
     <item

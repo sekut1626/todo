@@ -38,6 +38,8 @@ public class CustomAdapterSpinner extends ArrayAdapter<ItemData> {
         ImageView imageView = (ImageView) itemView.findViewById(R.id.img);
         imageView.setImageResource(list.get(position).getImageId());
 
+        TextView textView = (TextView) itemView.findViewById(R.id.txt);
+        textView.setText(list.get(position).getText());
         return itemView;
     }
 

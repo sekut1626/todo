@@ -49,13 +49,14 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addTaskWithStar(String task, int star) {
+    public void addTaskWithStar(String task, int star, int prioriti) {
 
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
 
         values.put(TaskContract.TaskEntry.COL_TASK_STAR, star);
         values.put(TaskContract.TaskEntry.COL_TASK_TITLE, task);
+        values.put(TaskContract.TaskEntry.COL_TASK_PRIORITY, prioriti);
         db.insertWithOnConflict(TaskContract.TaskEntry.TABLE,
                 null,
                 values,

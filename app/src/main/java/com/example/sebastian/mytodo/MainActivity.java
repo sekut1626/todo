@@ -113,31 +113,13 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private void setUpAlertDialogForMenu() {
-
-        final EditText taskEditText = new EditText(this);
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Add a new task")
-                .setMessage("What do you want to do next?")
-                .setView(taskEditText)
-                .setPositiveButton("Add", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String task = String.valueOf(taskEditText.getText());
-                        dbHelper.addTask(task);
-                        updateListView();
-                    }
-                })
-                .setNegativeButton("Cancel", null)
-                .create();
-        dialog.show();
-    }
 
     public void addData(View view) {
 
         String task = String.valueOf(taskNameEditText.getText());
         int stateOfStar = this.stateOfStar;
-        dbHelper.addTaskWithStar(task, stateOfStar);
+        int stateOfPriority =this.stateOfPriority;
+        dbHelper.addTaskWithStar(task, stateOfStar, stateOfPriority);
 
         taskNameEditText.getText().clear();
         updateListView();

@@ -56,7 +56,7 @@ public class TaskDbHelper extends SQLiteOpenHelper {
 
         values.put(TaskContract.TaskEntry.COL_TASK_STAR, star);
         values.put(TaskContract.TaskEntry.COL_TASK_TITLE, task);
-        values.put(TaskContract.TaskEntry.COL_TASK_PRIORITY, prioriti);
+       // values.put(TaskContract.TaskEntry.COL_TASK_PRIORITY, prioriti);
         db.insertWithOnConflict(TaskContract.TaskEntry.TABLE,
                 null,
                 values,

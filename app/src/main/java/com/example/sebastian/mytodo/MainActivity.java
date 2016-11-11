@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         String task = String.valueOf(taskNameEditText.getText());
         int stateOfStar = this.stateOfStar;
-        int stateOfPriority =this.stateOfPriority;
+       // int stateOfPriority =this.stateOfPriority;
         dbHelper.addTaskWithStar(task, stateOfStar, stateOfPriority);
 
         taskNameEditText.getText().clear();

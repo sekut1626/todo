@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void listapriorytetow() {
 
-        ArrayList<ItemData> list = new ArrayList<>();
-        list.add(new ItemData("normalny", R.drawable.jeden));
-        list.add(new ItemData("ważny", R.drawable.dwa));
-        list.add(new ItemData("pilny", R.drawable.trzy));
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(R.drawable.jeden);
+        list.add(R.drawable.dwa);
+        list.add(R.drawable.trzy);
 
         SpinnerAdapter adapter = new CustomAdapterSpinner(this, R.layout.spinner_layout, R.id.txt, list);
         spinner.setAdapter(adapter);
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         String task = String.valueOf(taskNameEditText.getText());
         int stateOfStar = this.stateOfStar;
-       // int stateOfPriority =this.stateOfPriority;
+        int stateOfPriority =this.stateOfPriority;
         dbHelper.addTaskWithStar(task, stateOfStar, stateOfPriority);
 
         taskNameEditText.getText().clear();

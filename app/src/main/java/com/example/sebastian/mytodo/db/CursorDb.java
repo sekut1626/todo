@@ -64,10 +64,28 @@
                 }
 
                 Spinner spinner = (Spinner) view.findViewById(R.id.spinner2);
-                ArrayList<ItemData> list = new ArrayList<>();
-                list.add(new ItemData("normalny", R.drawable.jeden));
-                list.add(new ItemData("ważny", R.drawable.dwa));
-                list.add(new ItemData("pilny", R.drawable.trzy));
+                int prio = cursor.getInt(cursor.getColumnIndexOrThrow(TaskContract.TaskEntry.COL_TASK_PRIORITY));
+                ArrayList<Integer> list = new ArrayList<>();
+                switch (prio) {
+                    case 0:
+                    list.add(R.drawable.jeden);
+                        list.add(R.drawable.dwa);
+                        list.add(R.drawable.trzy);
+                        break;
+
+                    case 1:
+                    list.add(R.drawable.dwa);
+                        list.add(R.drawable.jeden);
+                        list.add(R.drawable.trzy);
+                        break;
+
+                    case 2:
+                    list.add(R.drawable.trzy);
+                        list.add(R.drawable.jeden);
+                        list.add(R.drawable.dwa);
+                        break;
+
+                }
                 SpinnerAdapter adapter = new CustomAdapterSpinner((Activity) context, R.layout.spinner_layout, R.id.txt, list);
 
                 spinner.setAdapter(adapter);

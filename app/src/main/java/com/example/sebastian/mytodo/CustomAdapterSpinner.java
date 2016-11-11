@@ -18,13 +18,13 @@ import java.util.ArrayList;
  * Created by sebastian on 24.10.16.
  */
 
-public class CustomAdapterSpinner extends ArrayAdapter<ItemData> {
+public class CustomAdapterSpinner extends ArrayAdapter<Integer> {
 
     private int groupid;
-    private ArrayList<ItemData> list;
+    private ArrayList<Integer> list;
     private LayoutInflater inflater;
 
-    public CustomAdapterSpinner(Activity context, int groupid, int id, ArrayList<ItemData> list) {
+    public CustomAdapterSpinner(Activity context, int groupid, int id, ArrayList<Integer> list) {
         super(context, id, list);
 
         this.list = list;
@@ -36,10 +36,7 @@ public class CustomAdapterSpinner extends ArrayAdapter<ItemData> {
         View itemView = inflater.inflate(groupid, parent, false);
 
         ImageView imageView = (ImageView) itemView.findViewById(R.id.img);
-        imageView.setImageResource(list.get(position).getImageId());
-
-        TextView textView = (TextView) itemView.findViewById(R.id.txt);
-        textView.setText(list.get(position).getText());
+        imageView.setImageResource(list.get(position));
         return itemView;
     }
 

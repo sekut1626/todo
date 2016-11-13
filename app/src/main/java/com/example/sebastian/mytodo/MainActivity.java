@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Integer> list = new ArrayList<>();
         list.add(R.drawable.jeden);
-        list.add(R.drawable.dwa);
         list.add(R.drawable.trzy);
+        list.add(R.drawable.dwa);
 
         SpinnerAdapter adapter = new CustomAdapterSpinner(this, R.layout.spinner_layout, R.id.txt, list);
         spinner.setAdapter(adapter);

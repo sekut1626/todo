@@ -23,9 +23,8 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         String createTable = "CREATE TABLE " + TaskContract.TaskEntry.TABLE + " ( " +
                 TaskContract.TaskEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 TaskContract.TaskEntry.COL_TASK_TITLE + " TEXT NOT NULL, " +
-                TaskContract.TaskEntry.COL_TASK_STAR + " INTEGER" +
+                TaskContract.TaskEntry.COL_TASK_STAR + " INTEGER, " +
                 TaskContract.TaskEntry.COL_TASK_PRIORITY + " INTEGER " +");";
-
 
         db.execSQL(createTable);
     }
@@ -57,10 +56,11 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         values.put(TaskContract.TaskEntry.COL_TASK_STAR, star);
         values.put(TaskContract.TaskEntry.COL_TASK_TITLE, task);
         values.put(TaskContract.TaskEntry.COL_TASK_PRIORITY, prioriti);
-        db.insertWithOnConflict(TaskContract.TaskEntry.TABLE,
-                null,
-                values,
-                SQLiteDatabase.CONFLICT_REPLACE);
+//        db.insertWithOnConflict(TaskContract.TaskEntry.TABLE,
+//                null,
+//                values,
+//                SQLiteDatabase.CONFLICT_REPLACE);
+        db.insert(TaskContract.TaskEntry.TABLE, null, values);
 
         db.close();
     }
@@ -79,7 +79,9 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery
                 ("SELECT " + TaskContract.TaskEntry._ID +  " as _id, " + TaskContract.TaskEntry.COL_TASK_STAR
-                        + " , "+ TaskContract.TaskEntry.COL_TASK_TITLE + " from "
+                        + " , "+ TaskContract.TaskEntry.COL_TASK_TITLE
+                        + " , "+ TaskContract.TaskEntry.COL_TASK_PRIORITY
+                        + " from "
                         + TaskContract.TaskEntry.TABLE, null);
 
         if (cursor != null) {

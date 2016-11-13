@@ -68,21 +68,23 @@
                 ArrayList<Integer> list = new ArrayList<>();
                 switch (prio) {
                     case 0:
-                    list.add(R.drawable.jeden);
-                        list.add(R.drawable.dwa);
+                        list.add(R.drawable.jeden);
                         list.add(R.drawable.trzy);
+                        list.add(R.drawable.dwa);
                         break;
 
                     case 1:
-                    list.add(R.drawable.dwa);
-                        list.add(R.drawable.jeden);
+
                         list.add(R.drawable.trzy);
+                        list.add(R.drawable.dwa);
+                        list.add(R.drawable.jeden);
                         break;
 
                     case 2:
-                    list.add(R.drawable.trzy);
-                        list.add(R.drawable.jeden);
+
                         list.add(R.drawable.dwa);
+                        list.add(R.drawable.jeden);
+                        list.add(R.drawable.trzy);
                         break;
 
                 }
@@ -106,6 +108,7 @@
                                 break;
                         }
                     }
+
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
 
@@ -113,5 +116,4 @@
                 });
             }
         }
-
 

@@ -24,7 +24,7 @@ public class TaskDbHelper extends SQLiteOpenHelper {
                 TaskContract.TaskEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 TaskContract.TaskEntry.COL_TASK_TITLE + " TEXT NOT NULL, " +
                 TaskContract.TaskEntry.COL_TASK_STAR + " INTEGER, " +
-                TaskContract.TaskEntry.COL_TASK_PRIORITY + " INTEGER " +
+                TaskContract.TaskEntry.COL_TASK_PRIORITY + " INTEGER, " +
                 TaskContract.TaskEntry.COL_TASK_DATE + " TEXT NOT NULL " +");";
 
         db.execSQL(createTable);
@@ -35,21 +35,21 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TaskContract.TaskEntry.TABLE);
         onCreate(db);
     }
+//
+//    public void addTask(String task){
+//        SQLiteDatabase db = getWritableDatabase();
+//
+//        ContentValues values = new ContentValues();
+//        values.put(TaskContract.TaskEntry.COL_TASK_TITLE, task);
+//
+//        db.insertWithOnConflict(TaskContract.TaskEntry.TABLE,
+//                null,
+//                values,
+//                SQLiteDatabase.CONFLICT_REPLACE);
+//        db.close();
+//    }
 
-    public void addTask(String task){
-        SQLiteDatabase db = getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(TaskContract.TaskEntry.COL_TASK_TITLE, task);
-
-        db.insertWithOnConflict(TaskContract.TaskEntry.TABLE,
-                null,
-                values,
-                SQLiteDatabase.CONFLICT_REPLACE);
-        db.close();
-    }
-
-    public void addTaskWithStar(String task, int star, int prioriti, String tektstdaty ) {
+    public void addTaskWithStar(String task, int star, int prioriti, String date ) {
 
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -57,7 +57,7 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         values.put(TaskContract.TaskEntry.COL_TASK_STAR, star);
         values.put(TaskContract.TaskEntry.COL_TASK_TITLE, task);
         values.put(TaskContract.TaskEntry.COL_TASK_PRIORITY, prioriti);
-        values.put(TaskContract.TaskEntry.COL_TASK_DATE, tektstdaty);
+        values.put(TaskContract.TaskEntry.COL_TASK_DATE, date);
 //        db.insertWithOnConflict(TaskContract.TaskEntry.TABLE,
 //                null,
 //                values,

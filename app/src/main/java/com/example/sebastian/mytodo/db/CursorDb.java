@@ -49,6 +49,10 @@
                 String title = cursor.getString(cursor.getColumnIndexOrThrow(TaskContract.TaskEntry.COL_TASK_TITLE));
                 txtTitle.setText(title);
 
+                TextView txtData = (TextView) view.findViewById(R.id.dataKurwa);
+                String date = cursor.getString(cursor.getColumnIndexOrThrow(TaskContract.TaskEntry.COL_TASK_DATE));
+                txtData.setText(date);
+
 
                 CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
                 int isDone = cursor.getInt(cursor.getColumnIndexOrThrow(TaskContract.TaskEntry.COL_TASK_STAR));
@@ -114,10 +118,6 @@
 
                     }
                 });
-
-                TextView txtData = (TextView) view.findViewById(R.id.dataKurwa);
-                String datunia = cursor.getString(cursor.getColumnIndexOrThrow(TaskContract.TaskEntry.COL_TASK_DATE));
-                txtData.setText(datunia);
             }
         }
 

@@ -1,5 +1,6 @@
 package com.example.sebastian.mytodo;
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -37,9 +39,12 @@ public class MainActivity extends AppCompatActivity {
     private EditText taskNameEditText;
     private CheckBox checkBoxStar;
     private Spinner spinner;
+    private TextView txt;
     private int stateOfStar = 0;
     private int stateOfPriority = 0;
-    Button button;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         mTaskListView = (ListView) findViewById(R.id.list_todo);
         taskNameEditText = (EditText) findViewById(R.id.taketask);
         spinner = (Spinner) findViewById(R.id.spinner);
+        txt = (TextView) findViewById(R.id.textViewDate) ;
     }
 
     private void initDB() {
@@ -118,8 +124,9 @@ public class MainActivity extends AppCompatActivity {
 
         String task = String.valueOf(taskNameEditText.getText());
         int stateOfStar = this.stateOfStar;
-        int stateOfPriority =this.stateOfPriority;
-        dbHelper.addTaskWithStar(task, stateOfStar, stateOfPriority);
+        int stateOfPriority = this.stateOfPriority;
+        String tektstdaty = String.valueOf(txt.getText());
+        dbHelper.addTaskWithStar(task, stateOfStar, stateOfPriority, tektstdaty);
 
         taskNameEditText.getText().clear();
         updateListView();
@@ -157,4 +164,7 @@ public class MainActivity extends AppCompatActivity {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
+
+
+
 }

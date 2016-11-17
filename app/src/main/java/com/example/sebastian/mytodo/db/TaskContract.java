@@ -17,6 +17,8 @@ public class TaskContract {
         public static final String COL_TASK_TITLE = "title";
         public static final String COL_TASK_STAR = "star";
         public static final String COL_TASK_PRIORITY = "prioriti";
+        public static final String COL_TASK_DATE = "date";
+
 
     }
 }

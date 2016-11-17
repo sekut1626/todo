@@ -114,6 +114,10 @@
 
                     }
                 });
+
+                TextView txtData = (TextView) view.findViewById(R.id.dataKurwa);
+                String datunia = cursor.getString(cursor.getColumnIndexOrThrow(TaskContract.TaskEntry.COL_TASK_DATE));
+                txtData.setText(datunia);
             }
         }
 

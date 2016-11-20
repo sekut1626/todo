@@ -11,69 +11,56 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.sebastian.mytodo.MainActivity">
 
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox1"
+            android:onClick="setCheckBoxStar"
+            style="?android:attr/starStyle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/taketask"
-        android:layout_marginTop="0dp"
-        android:id="@+id/checkBox1"
-        android:onClick="setCheckBoxStar"
-        style="?android:attr/starStyle"/>
+        <TextView
+            android:id="@+id/task_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            android:textSize="16sp"
+            android:layout_alignBottom="@+id/checkBox1"
+            android:layout_toRightOf="@+id/checkBox1"
+            android:layout_toEndOf="@+id/checkBox1" />
 
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2"
+            android:layout_weight="1"
+            android:layout_below="@+id/task_title"
+            android:layout_toRightOf="@+id/dataKurwa"
+            android:layout_toEndOf="@+id/dataKurwa"
+            android:layout_marginLeft="42dp"
+            android:layout_marginStart="42dp"
+            android:layout_alignBottom="@+id/dataKurwa" />
 
-    <Button
-        android:id="@+id/deleteTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="Done"
-        android:onClick="deleteTask" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/checkbox_on_background"
+            android:id="@+id/imageButtonDelete"
+            android:onClick="deleteTask"
+            android:layout_below="@+id/task_title"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
-    <TextView
+        <TextView
         android:id="@+id/dataKurwa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dasdas"
-        android:textSize="20sp"
-        android:layout_below="@+id/deleteTask"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="87dp" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner2"
-        android:layout_weight="1"
-        android:layout_alignBottom="@+id/dataKurwa"
-        android:layout_toRightOf="@+id/dataKurwa"
-        android:layout_toEndOf="@+id/dataKurwa"
-        android:layout_marginLeft="86dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginBottom="42dp" />
-
-    <TextView
-        android:id="@+id/task_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello"
-        android:textSize="20sp"
-        android:layout_above="@+id/spinner2"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_weight="1"
-        android:layout_alignBaseline="@+id/checkBox1"
-        android:layout_alignBottom="@+id/checkBox1"
-        android:layout_alignRight="@+id/dataKurwa"
-        android:layout_alignEnd="@+id/dataKurwa" />
-
+        android:text="Termin:"
+        android:textSize="16sp"
+            android:layout_alignBottom="@+id/imageButtonDelete"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
 </RelativeLayout>
+

@@ -61,8 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Integer> list = new ArrayList<>();
         list.add(R.drawable.jeden);
-        list.add(R.drawable.trzy);
         list.add(R.drawable.dwa);
+        list.add(R.drawable.trzy);
+
 
         SpinnerAdapter adapter = new CustomAdapterSpinner(this, R.layout.spinner_layout, R.id.txt, list);
         spinner.setAdapter(adapter);
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         mTaskListView = (ListView) findViewById(R.id.list_todo);
         taskNameEditText = (EditText) findViewById(R.id.taketask);
         spinner = (Spinner) findViewById(R.id.spinner);
-        txt = (TextView) findViewById(R.id.textViewDate) ;
+        txt = (TextView) findViewById(R.id.textViewDate);
     }
 
     private void initDB() {
@@ -152,10 +153,9 @@ public class MainActivity extends AppCompatActivity {
     public void setCheckBoxStar(View view) {
 
         if (checkBoxStar.isChecked()) {
-            Toast.makeText(getBaseContext(), " YES", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "ogwiazdkownie", Toast.LENGTH_LONG).show();
             stateOfStar = 1;
         } else {
-            Toast.makeText(getBaseContext(), " kurwa", Toast.LENGTH_LONG).show();
             stateOfStar = 0;
         }
     }
